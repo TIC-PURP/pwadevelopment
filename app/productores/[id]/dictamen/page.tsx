@@ -812,19 +812,14 @@ export default function DictamenTecnicoPage() {
 
       {/* Modal del mapa de polígonos */}
       {showPolygonMap && (
-        <EnhancedPolygonMap
-          onPolygonChange={handlePolygonChange}
-          initialPolygon={polygonCoordinates}
-          onClose={() => setShowPolygonMap(false)}
-        />
+        <div className="fixed inset-0 z-50 bg-white p-6 shadow-xl rounded-lg">
+          <PolygonMapGoogle
+            onPolygonChange={handlePolygonChange}
+            initialPolygon={polygonCoordinates}
+            onClose={() => setShowPolygonMap(false)}
+          />
+        </div>
       )}
-      {/* {showPolygonMap && (
-        <PolygonMapGoogle
-          onPolygonChange={handlePolygonChange}
-          initialPolygon={polygonCoordinates}
-          onClose={() => setShowPolygonMap(false)}
-        />
-      )} */}
     </div>
   )
 }
