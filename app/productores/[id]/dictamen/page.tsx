@@ -13,7 +13,6 @@ import { Badge } from "@/components/ui/badge"
 import { useAppSelector, useAppDispatch } from "@/lib/hooks"
 import { addDictamen } from "@/lib/slices/dictamenesSlice"
 import PolygonMapGoogle from "@/components/PolygonMapGoogle"
-import { EnhancedPolygonMap } from "@/components/enhanced-polygon-map"
 import { useToast } from "@/hooks/use-toast"
 import type { Coordinate, DictamenTecnico } from "@/lib/slices/dictamenesSlice"
 import {

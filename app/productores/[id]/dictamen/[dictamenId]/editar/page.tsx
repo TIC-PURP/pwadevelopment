@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import { useAppSelector, useAppDispatch } from "@/lib/hooks"
 import { updateDictamen } from "@/lib/slices/dictamenesSlice"
-import { EnhancedPolygonMap } from "@/components/enhanced-polygon-map"
+import PolygonMapGoogle from "@/components/PolygonMapGoogle"
 import { useToast } from "@/hooks/use-toast"
 import type { Coordinate } from "@/lib/slices/dictamenesSlice"
 import { FileText, MapPin, Calendar, User, Droplets, Mountain, Layers, Edit, Save, Map } from "lucide-react"
@@ -601,7 +601,7 @@ export default function EditarDictamenPage() {
 
       {/* Modal del mapa de polígonos */}
       {showPolygonMap && (
-        <EnhancedPolygonMap
+        <PolygonMapGoogle
           onPolygonChange={handlePolygonChange}
           initialPolygon={polygonCoordinates}
           onClose={() => setShowPolygonMap(false)}
