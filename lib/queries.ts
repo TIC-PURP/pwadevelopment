@@ -1,13 +1,13 @@
 // /lib/queries.ts
 
-import localDB from "./registro-db";
+import { getDB } from "./registro-db";
 import type { MiDocumento } from "./types";
 import type PouchDB from "pouchdb-core";
 import { v4 as uuidv4 } from "uuid";
 
 // 🔍 Crear índice
 export const crearIndice = async () => {
-  await localDB.createIndex({
+  await getDB().createIndex({
     index: { fields: ["tipo", "nombre", "usuario"] },
   });
 };
@@ -19,7 +19,7 @@ export const buscarPorNombre = async (
 ): Promise<PouchDB.Core.ExistingDocument<MiDocumento>[]> => {
   await crearIndice();
 
-  const result = await localDB.find({
+  const result = await getDB().find({
     selector: {
       tipo: "registro",
       usuario: usuario,
@@ -47,7 +47,7 @@ export const guardarRegistro = async (
   };
 
   try {
-    const response = await localDB.put(documento);
+    const response = await getDB().put(documento);
     console.log("Documento guardado:", response);
     return response;
   } catch (error) {
@@ -61,7 +61,7 @@ export const obtenerPorId = async (
   _id: string
 ): Promise<PouchDB.Core.ExistingDocument<MiDocumento>> => {
   try {
-    const doc = await localDB.get(_id);
+    const doc = await getDB().get(_id);
     return doc as PouchDB.Core.ExistingDocument<MiDocumento>;
   } catch (error: any) {
     if (error.status === 404) {
@@ -78,8 +78,8 @@ export const eliminarRegistro = async (
   _id: string
 ): Promise<PouchDB.Core.Response> => {
   try {
-    const doc = await localDB.get(_id);
-    const response = await localDB.remove(doc);
+    const doc = await getDB().get(_id);
+    const response = await getDB().remove(doc);
     console.log(`Documento ${_id} eliminado`);
     return response;
   } catch (error: any) {

@@ -1,3 +1,5 @@
+// auth-context.tsx: define el contexto de autenticación y mantiene el estado del usuario y sus roles.
+
 import { createContext, useContext, useEffect, useState } from 'react';
 import remoteAuthDB from './auth-db';
 

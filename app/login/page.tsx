@@ -1,3 +1,5 @@
+// login/page.tsx: formulario de inicio de sesión que usa login contra CouchDB vía pouchdb-authentication.
+
 "use client"
 
 import type React from "react"

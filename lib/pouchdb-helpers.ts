@@ -1,5 +1,5 @@
 // /lib/pouchdb-helpers.ts (puedes renombrar tu archivo actual a este)
-import localDB from "./registro-db";
+import { getDB } from "./registro-db";
 import { v4 as uuidv4 } from "uuid";
 import type PouchDB from "pouchdb-core";
 import type { MiDocumento } from "./types";
@@ -21,7 +21,7 @@ export const guardarDato = async (
   };
 
   try {
-    const result = await localDB.put(nuevoDoc);
+    const result = await getDB().put(nuevoDoc);
     return result;
   } catch (err) {
     console.error("Error al guardar:", err);
@@ -36,7 +36,7 @@ export const leerDatos = async (
   usuario: string
 ): Promise<PouchDB.Core.ExistingDocument<MiDocumento>[]> => {
   try {
-    const result = await localDB.find({
+    const result = await getDB().find({
       selector: {
         tipo: "registro",
         usuario,

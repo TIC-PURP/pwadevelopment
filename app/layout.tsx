@@ -1,3 +1,5 @@
+// layout.tsx: layout global aplicado a todas las rutas. Se usa para envolver la app con providers como AuthProvider.
+
 "use client"
 import type React from "react"
 // import type { Metadata } from "next"
