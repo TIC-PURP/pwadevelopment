@@ -1,5 +1,3 @@
-// page.tsx: ruta raíz de la aplicación. Aquí puedes mostrar un dashboard o pantalla principal protegida.
-
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"

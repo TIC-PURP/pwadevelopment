@@ -1,5 +1,3 @@
-// data.ts: contiene funciones reutilizables para guardar y leer datos desde la base local.
-
 import localDB from './pouchdb';
 import { useAuth } from './auth-context';
 
