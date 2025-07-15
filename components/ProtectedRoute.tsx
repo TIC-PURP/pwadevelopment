@@ -1,3 +1,5 @@
+// ProtectedRoute.tsx: componente que bloquea rutas si no hay usuario autenticado.
+
 import { useRouter } from 'next/router';
 import { useAuth } from '@/lib/auth-context';
 import { useEffect } from 'react';

@@ -1,3 +1,5 @@
+// sync.ts: configura la sincronización automática entre PouchDB (local) y CouchDB (remoto).
+
 import localDB from './pouchdb';
 import remoteDB from './remote-db';
 
