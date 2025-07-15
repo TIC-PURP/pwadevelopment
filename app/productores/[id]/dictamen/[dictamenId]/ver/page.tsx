@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useAppSelector } from "@/lib/hooks"
+import PolygonMapGoogle from "@/components/PolygonMapGoogle"
 import { Calendar, User, MapPin, Droplets, Mountain, Layers, FileText, Map } from "lucide-react"
 
 export default function VerDictamenPage() {
@@ -150,6 +151,7 @@ export default function VerDictamenPage() {
                       </div>
                     ))}
                   </div>
+                  
                 </div>
               </CardContent>
             </Card>
